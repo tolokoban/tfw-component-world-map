@@ -1,0 +1,82 @@
+{
+  "name": "tfw-component-world-map",
+  "version": "0.11.0",
+  "description": "React component displaying a SVG World Map with 211 highlightable countries",
+  "license": "GPL-3.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Tolokoban <contact@tolokoban.org>",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tolokoban/tfw-component-world-map.git"
+  },
+  "keywords": [
+    "tolokoban",
+    "toloframework",
+    "tfw",
+    "react",
+    "world",
+    "map",
+    "svg"
+  ],
+  "bugs": {
+    "url": "https://github.com/tolokoban/tfw-component-world-map/issues"
+  },
+  "homepage": "https://github.com/tolokoban/tfw-component-world-map#readme",
+  "dependencies": {
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "js-yaml": "^3.13.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "save-as": "^0.1.8",
+    "save-as-file": "^0.2.0",
+    "save-dev": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "@types/node": "^11.15.3",
+    "@types/webpack": "^4.41.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.7.1",
+    "gh-pages": "^2.1.1",
+    "jest": "^24.9.0",
+    "raw-loader": "^3.1.0",
+    "ts-jest": "^24.3.0",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.5.4",
+    "tslint": "^5.20.1",
+    "typedoc": "^0.15.2",
+    "typescript": "^3.7.4",
+    "watch": "^1.0.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "watch": "./watch.sh",
+    "start": "watch 'npm run build' src/",
+    "build": "clear && date && echo Compiling TypeScript... && tsc && node scripts/copy-assets.js src/ dist/",
+    "doc": "typedoc --mode modules --readme src/DOC.md --excludeNotExported --excludePrivate --out doc/ src/",
+    "deploy": "gh-pages --dist doc",
+    "lint": "tslint -p . --fix -t stylish -c tslint.json 'src/**/*.ts'",
+    "test": "jest --watch"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

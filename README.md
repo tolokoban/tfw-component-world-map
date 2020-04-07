@@ -1,2 +1,3 @@
 # tfw-component-world-map
-React component representing a SVG image from 211 highlightable countries
+
+React component displaying a SVG World Map with 211 highlightable countries.
